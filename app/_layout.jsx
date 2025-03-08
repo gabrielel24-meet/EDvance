@@ -41,9 +41,9 @@ const _layout = () => {
         />
 
         <Tabs.Screen
-          name='Register'
+          name='Login'
           options={{
-            title: 'Register',
+            title: 'Login',
             headerShown: true,
             tabBarIcon: ({ focused, color, size }) => (
               <Ionicons

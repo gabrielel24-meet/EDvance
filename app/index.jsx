@@ -2,8 +2,8 @@ import { Link } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, ScrollView, Button, Linking, Image, TouchableOpacity, } from 'react-native'
 import React, { useState } from 'react';
-// import { Client, Account, ID } from 'react-native-appwrite';
 import axios from 'axios';
+import { logoutUser } from "./appwriteConfig";
 
 
 ////I used ChatGPT for the weather API. I did try to understand what it does. I think I understood thr most of it
@@ -39,7 +39,7 @@ export const getGeminiResponse = async (prompt) => {
 //     .setPlatform('com.meet.app');
 
 //Main App function
-export default function App() {
+export default function App({navigation}) {
 
   // //Login useState + useEffect
   // const [name, setName] = useState(''); 
@@ -57,14 +57,21 @@ const handleSubmit = async () => {
   setResponse(aiResponse);
 };
 
-
+const handleLogout = async () => {
+  await logoutUser();
+  navigation.replace("Login"); // Redirect to login after logout
+};
 
   return (
     <View style={styles.container}>
 
       <Text style={styles.Hello}>Hello!</Text>
-      <Text style={styles.buttonText}>Welcome to your second school!</Text>
+      <Text style={styles.buttonText}>Welcommmmme to your second school!</Text>
 
+      <View>
+        <Button title="Logout" onPress={handleLogout} />
+      </View>
+      
 
       <View>
         <Text style={styles.Name}>Ask me a Question:</Text>
@@ -82,36 +89,7 @@ const handleSubmit = async () => {
       </View>
 
       <Link href={"/Register"}>Sign in</Link>
-      
-      {/* <View style={styles.InputMargin}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Name"
-          value={name}
-          onChangeText={setName}
-        /> */}
-        
-        {/* <TouchableOpacity style={styles.Link} onPress={HandleName}><Text style={styles.ButtonText}>Submit</Text></TouchableOpacity> It goes to the function HandleName() that sets "displayName" to be "name" */}
 
-        {/* <Text style={styles.Name}>Hello {displayName}!</Text> */}
-      {/* </View> */}
-      
-      {/* Weather */}
-      {/* <View style={styles.container}>
-      <Text style={styles.header}>Weather</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter city"
-        value={city}
-        onChangeText={setCity}
-      />
-      <Button title="Get Weather" onPress={fetchWeather} />
-      {weather && (
-        <View style={styles.result}>
-          <Text>Temperature: {weather.main.temp}°C</Text>
-          <Text>Weather: {weather.weather[0].description}</Text>
-        </View>
-      )} */}
       
       <StatusBar style="auto" />
     </View>
