@@ -1,50 +1,41 @@
-# Welcome to your Expo app 👋
+# EdVance
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Description
+**EdVance** is a platform for teachers in the region.
 
-## Get started
+Our platform is designed to help teachers teach better, by creating lesson plans that include more effective methods of teaching, that will help students to understand the material better. In addition, the platform implements in the lessons 21st century necessary life skills (critical thinking, working in groups, problem solving, etc), so students will leave school more prepared for life / work life itself. 
 
-1. Install dependencies
+## Main Features
+The platform plans the lessons, using **AI**. The teacher, very basiclly, asks for the AI to create a lesson plan according to the metirial & the skill he/she wants to teach, and the AI generates it!
 
-   ```bash
-   npm install
-   ```
+The platform lets every student to have a user. Above the students, every teacher will have a user, that is able to supervise over his/her students. Above the teacher there is the administrator / the rest of the directory, who can supervise over all that is going on. 
 
-2. Start the app
+The teacher / directory will be able to supervise over students grades, development, time learning on the platform and more future features to come.
 
-   ```bash
-    npx expo start
-   ```
+### ***Current Features***
+* Registration 
+* AI that helps teachers
 
-In the output, you'll find options to open the app in a
+### ***Future Features***
+* User login 
+* Courses page
+* Teachers being able to supervise over students
+* Database for the surveys 
+ 
+## Future Roadmap
+Build & add all of the future features and finally release it, in order to have a final working platform, that will help students to have a better, more relevent & funner education, and overall give students, teachers & administrators the best experience, in order to have a better future. 
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Installing & Running the app
+First you'll need to download on you computer:
+* ***Visual Studio Code***
+* ***Node JS***
+* ***Expo Go (on your mobile)***
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+In order to run the app create a new repository to this one and open it in VScode. After that, run the app and open it on your phone, using *Expo Go*.
 
-## Get a fresh project
+> for a full **Setup Guide**, open: https://docs.google.com/document/d/1kp8hMDCs646ifqWCwvjb5ooIg5OPhw1KL-zRlVymbow/edit?tab=t.0
 
-When you're ready, run:
+## ***Developer Credits & Contributions***
+Gabriel Eliav, Dear stuff & TA's
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+> https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D
