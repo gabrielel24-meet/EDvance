@@ -63,7 +63,7 @@ const handleSubmit = async () => {
     <View style={styles.container}>
 
       <Text style={styles.Hello}>Hello!</Text>
-      <Text style={styles.buttonText}>Welcommmmme to your second school!</Text>
+      <Text style={styles.buttonText}>Welcome to your second school!</Text>
 
 
       <View>
