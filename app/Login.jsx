@@ -46,12 +46,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 20,
+    backgroundColor: "#7CFAD9"
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
+    color: "#FFFFFF"
   },
   input: {
     height: 50,
@@ -60,7 +62,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 15,
-  },
+    backgroundColor: "#FFFFFF"
+},
 });
 
 export default LoginScreen;

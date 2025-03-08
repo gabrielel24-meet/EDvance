@@ -16,46 +16,10 @@ import { logoutUser } from "./appwriteConfig";
 //     return response.data; 
 // }
 
-//API
-const API_KEY = "AIzaSyAOxcvlHmBa-sh8LloEBJnYlO8-YxQBRJs";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
-export const getGeminiResponse = async (prompt) => {
-  try {
-    const response = await axios.post(API_URL, {
-      contents: [{ parts: [{ text: prompt }] }]
-    });
-
-    return response.data.candidates[0].content.parts[0].text;
-  } catch (error) {
-    console.error("Error fetching Gemini API response:", error);
-    return "Error fetching response";
-  }
-};
-
-// //DataBase
-// const client = new Client()
-//     .setProject('67b2217a00250075826a')
-//     .setPlatform('com.meet.app');
 
 //Main App function
 export default function App({navigation}) {
-
-  // //Login useState + useEffect
-  // const [name, setName] = useState(''); 
-  // const [displayName, setDisplayName] = useState('');
-
-  // const HandleName = () => { 
-  //   setDisplayName(name)
-  // }
-
-const [input, setInput] = useState("");
-const [response, setResponse] = useState("");
-
-const handleSubmit = async () => {
-  const aiResponse = await getGeminiResponse(input);
-  setResponse(aiResponse);
-};
 
 const handleLogout = async () => {
   await logoutUser();
@@ -72,25 +36,8 @@ const handleLogout = async () => {
         <Button title="Logout" onPress={handleLogout} />
       </View>
       
-
-      <View>
-        <Text style={styles.Name}>Ask me a Question:</Text>
-
-        <TextInput
-          value={input}
-          onChangeText={setInput}
-          placeholder="Type your question...  "
-          style={styles.TextInput}
-        />
-        <Button title="Get Response" onPress={handleSubmit} style={styles.buttonText}/>
-        <ScrollView >
-          <Text>{response}</Text>
-        </ScrollView>
-      </View>
-
       <Link href={"/Register"}>Sign in</Link>
 
-      
       <StatusBar style="auto" />
     </View>
   );
