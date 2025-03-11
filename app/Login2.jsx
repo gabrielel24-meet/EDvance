@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View,navigation, Alert, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { Link } from 'expo-router';
+import { View, Linking , navigation, Alert, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { account, getSession } from "./appwriteConfig";
 
 const LoginScreen = () => {
@@ -68,9 +69,7 @@ const LoginScreen = () => {
       </View>
 
       {/* Sign Up Link */}
-      <Text style={styles.signupText}>
-        Don't have an account? <Text style={styles.signupLink}>Sign up!</Text>
-      </Text>
+      <Text style={styles.signupText}>Don't have an account? <Link style={styles.signupLink} href={"./Register2"}>Sign up</Link></Text> 
     </View>
   );
 };
