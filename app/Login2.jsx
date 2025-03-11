@@ -2,17 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'expo-router';
 import { View, Linking , navigation, Alert, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import { account, getSession } from "./appwriteConfig";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  //Check if user is already logged in
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    //Check if user is already logged in
     useEffect(() => {
       const checkUserSession = async () => {
         const user = await getSession();
         if (user) {
-          navigation.replace("Home"); // Redirect to home if logged in
+          navigation.replace("/PreRegister"); // Redirect to home if logged in
         }
       };
       checkUserSession();
@@ -23,7 +26,7 @@ const LoginScreen = () => {
       try {
         await account.createEmailPasswordSession(email, password);
         Alert.alert("Success", "Logged in successfully!");
-        navigation.replace("Home"); // Redirect after login
+        navigation.replace("/PreRegister"); // Redirect after login
       } catch (error) {
         Alert.alert("Error", error.message);
         console.error("Login Error:", error);

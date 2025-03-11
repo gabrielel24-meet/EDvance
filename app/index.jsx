@@ -4,43 +4,48 @@ import { StyleSheet, Text, View, TextInput, ScrollView, Button, Linking, Image, 
 import React, { useState } from 'react';
 import axios from 'axios';
 import { logoutUser } from "./appwriteConfig";
-
-
-////I used ChatGPT for the weather API. I did try to understand what it does. I think I understood thr most of it
-
-// const API_KEY = "baa92cfee914a9267cbc258491aeafb4"; // API key
-// const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
-
-// export const getWeather = async (city) => { //Reusable component that gets the liked city, and returns data about the city weather
-//     const response = await axios.get(`${BASE_URL}?q=${city}&appid=${API_KEY}&units=metric`);
-//     return response.data; 
-// }
-
+import { useNavigation } from "@react-navigation/native";
 
 
 //Main App function
-export default function App({navigation}) {
+export default function App() {
 
-const handleLogout = async () => {
-  await logoutUser();
-  navigation.replace("Login"); // Redirect to login after logout
-};
+  const navigation = useNavigation();
+
+  const handleLogout = async () => {
+    await logoutUser();
+    navigation.replace("Login"); // Redirect to login after logout
+  };
 
   return (
     <View style={styles.container}>
+      {/* Logo Placeholder */}
+      <Image
+        source={require("../assets/images/Logo.png")} // Replace with your logo path
+        style={styles.logo}
+        resizeMode="contain"
+      />
 
-      <Text style={styles.Hello}>Hello!</Text>
-      <Text style={styles.buttonText}>Welcommmmme to your second school!</Text>
+      {/* Heading */}
+      <Text style={styles.h1}>Hello</Text>
+      <Text style={styles.h2}>Welcome to EDvance</Text>
 
-      <View>
-        <Button title="Logout" onPress={handleLogout} />
-      </View>
+      {/* Description */}
+      <Text style={styles.description}>
+        Here you'll be able to maximize your school experience, whether you are a{" "}
+        <Text style={styles.bold}>teacher</Text>, <Text style={styles.bold}>principal</Text>, or a{" "}
+        <Text style={styles.bold}>student</Text>.
+      </Text>
+
+      {/* "Let's Start!" Button */}
+      <TouchableOpacity
+        style={styles.startButton}
+        onPress={() => navigation.navigate("PreRegister")}
+      >
+        <Text style={styles.buttonText}>Let's Start!</Text>
+      </TouchableOpacity>
+
       
-      <Link href={"/Login2"}>Sign in</Link>
-      <Link href={"/Home"}>Home</Link>
-
-
-      <StatusBar style="auto" />
     </View>
   );
 }
@@ -48,76 +53,54 @@ const handleLogout = async () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start', // Align items to the top
-    backgroundColor: "#7CFAD9" , //'#fbe0e0'
+    backgroundColor: "#b4ab95",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 60, // Push content down to make space for the logo
+  },  
+  logo: {
+    width: 250,
+    height: 140,
+    position: "absolute",
+    top: 1, // Move logo to the top
+    alignSelf: "center",
   },
-
-  ButtonText:{
-    color: "white"
+  
+  h1: {
+    fontSize: 40,
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    marginTop: 120,
   },
-
-  Hello:{
-    color: '#FFFFFF',
+  h2: {
     fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: "center",
-    marginTop:20,
+    color: "#D5C2A3",
+    marginTop: 5,
+    fontWeight: "600",
   },
-
-  Name: {
-    color: '#FFFFFF',
-    fontSize: 30,
-    fontWeight: 'bold',
+  description: {
+    fontSize: 18,
+    color: "#F8E8D0",
     textAlign: "center",
-    marginTop:20,
+    marginTop: 20,
+    paddingHorizontal: 15,
   },
-
+  bold: {
+    fontWeight: "bold",
+    color: "#E5D2A0",
+  },
+  startButton: {
+    marginTop: 30,
+    backgroundColor: "#A29072",
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+  },
   buttonText: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: "center",
-    marginTop:5,
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
   },
+});
 
-  TextInput: {
-    height: 50,
-    width: 300,
-    marginTop: 20,
-    borderColor: 'gray',
-    borderWidth: 2,
-    borderRadius: 7,
-    paddingHorizontal: 15,
-    backgroundColor: '#f9f9f9',
-  },
-
-  InputMargin:{
-    marginTop: 10,
-    textAlign: "center",
-  },
-
-  Link:{
-    height: 40,
-    width: 80,
-    marginTop: 20,
-    paddingTop: 10,
-    borderColor: 'gray',
-    borderWidth: 2,
-    borderRadius: 7,
-    paddingHorizontal: 15,
-    backgroundColor: 'red',
-    color: 'white',
-    fontSize:15
-  },
-
-  header: { fontSize: 24, fontWeight: 'bold' , marginTop:20},
-  input: { borderWidth: 1, width: 200, padding: 8, margin: 10 , backgroundColor:"white"},
-  result: { marginTop: 20, alignItems: 'center' },
-
-  // image: {
-  //   width: 400, // Adjust the width
-  //   height: 200, // Adjust the height
-  // },
-})
 
