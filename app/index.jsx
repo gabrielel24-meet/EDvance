@@ -36,7 +36,7 @@ const handleLogout = async () => {
         <Button title="Logout" onPress={handleLogout} />
       </View>
       
-      <Link href={"/Register"}>Sign in</Link>
+      <Link href={"/Login2"}>Sign in</Link>
       <Link href={"/Home"}>Home</Link>
 
 
