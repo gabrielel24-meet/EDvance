@@ -2,15 +2,16 @@ import React from "react";
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Svg, { Circle, Path } from "react-native-svg";
 
-const RoleSelectionScreen = () => {
+
+const RoleSelectionScreen = ({Navigation}) => {
   return (
     <ImageBackground source={require("../assets/images/BG3.png")} style={styles.background}>
       <View style={styles.container}>
         <Text style={styles.title}>I am a...</Text>
 
         <View style={styles.row}>
-          <RoleButton label="Teacher" icon={teacherIcon} />
-          <RoleButton label="Principal" icon={principalIcon} />
+        <RoleButton label="Teacher" icon={teacherIcon} onPress={() => navigation.navigate("./Login.jsx")} />
+        <RoleButton label="Principal" icon={principalIcon} />
         </View>
 
         <RoleButton label="Student" icon={studentIcon} />
