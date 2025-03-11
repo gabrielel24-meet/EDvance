@@ -37,6 +37,8 @@ const handleLogout = async () => {
       </View>
       
       <Link href={"/Register"}>Sign in</Link>
+      <Link href={"/Home"}>Home</Link>
+
 
       <StatusBar style="auto" />
     </View>
