@@ -60,7 +60,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#b4ab95", // Light brown
+    backgroundColor: "#b4ab95", 
     alignItems: "center",
     paddingTop: 50,
   },
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
   },
   logout:{
     marginTop: 350,
-    color: "#FFFFFFF"
   },
   iconPlaceholder: {
     width: 40,

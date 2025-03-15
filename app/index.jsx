@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, ScrollView, Button, Linking, Image, TouchableOpacity, } from 'react-native'
 import React, { useState } from 'react';
 import axios from 'axios';
-import { logoutUser } from "./appwriteConfig";
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -11,11 +10,6 @@ import { useNavigation } from "@react-navigation/native";
 export default function App() {
 
   const navigation = useNavigation();
-
-  const handleLogout = async () => {
-    await logoutUser();
-    navigation.replace("Login"); // Redirect to login after logout
-  };
 
   return (
     <View style={styles.container}>
