@@ -3,10 +3,11 @@ import { View,Button,Alert, Text, TouchableOpacity,Image, StyleSheet } from "rea
 import { FontAwesome } from "@expo/vector-icons";
 import { logoutUser } from "./appwriteConfig";
 import axios from 'axios';
+import { useState } from "react";
 
+const HomeScreen = ({ navigation }) => {
 
-const HomeScreen = () => {
-
+    //LogOut
     const handleLogout = async () => {
       await logoutUser();
       navigation.replace("Login"); // Redirect to login after logout
@@ -45,12 +46,6 @@ const HomeScreen = () => {
         <Button title="Logout" onPress={handleLogout} />
       </View>
 
-      {/* Bottom Navigation */}
-      <View style={styles.bottomNav}>
-        <FontAwesome name="bars" size={24} color="white" />
-        <FontAwesome name="home" size={28} color="white" />
-        <View style={styles.circle} />
-      </View>
     </View>
   );
 };

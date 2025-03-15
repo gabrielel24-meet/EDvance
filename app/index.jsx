@@ -4,11 +4,19 @@ import { StyleSheet, Text, View, TextInput, ScrollView, Button, Linking, Image, 
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
+import AIChatScreen from "./AI";
+import HomeScreen from "./HomeScreen";
+
+
+//Menu
+const Drawer = createDrawerNavigator();
 
 
 //Main App function
 export default function App() {
-
   const navigation = useNavigation();
 
   return (
@@ -39,8 +47,9 @@ export default function App() {
         <Text style={styles.buttonText}>Let's Start!</Text>
       </TouchableOpacity>
 
-      
     </View>
+
+
   );
 }
 
@@ -50,13 +59,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#b4ab95",
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 60, // Push content down to make space for the logo
+    paddingTop: 60, 
   },  
   logo: {
     width: 250,
     height: 140,
     position: "absolute",
-    top: 1, // Move logo to the top
+    top: 1, 
     alignSelf: "center",
   },
   
